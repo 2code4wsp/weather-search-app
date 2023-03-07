@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+}
+
+body {
+    background-color: navajowhite;
+}
+
+.container-fluid {
+    width: fit-content;
+    margin: 30px;
+    padding: 20px;
+}
+
+.search {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.input[type="text"] {
+    height: 10px;
+    width: 5px;
+    padding: 10px;
+    margin: 0;
+    background: white;
+    font-size: 12px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 6px;
+}
+
+.input[type="submit"] {
+    height: 10px;
+    width: 5px;
+    padding: 10px;
+    background-color: transparent;
+    background: white;
+}
+
+.display-current {
+    text-align: left;
+    width: 200px;
+    color: lightskyblue
+}
+
+.chosen-city {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: none;
+}
+
+.temp {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: none;
+}
+
+.wind {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: none;
+}
+
+.humidity {
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border: none;
+}
+
