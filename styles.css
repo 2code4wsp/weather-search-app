@@ -13,13 +13,24 @@ header {
 
 body {
     background-color: navajowhite;
+    font-family: cursive;
 }
 
 .container-fluid {
-    width: fit-content;
-    margin: 30px;
-    padding: 20px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
+
+.main {
+    display: flex;
+    align-items: center;
+
+}
+    
 
 .search {
     padding: 20px;
@@ -49,8 +60,12 @@ body {
 }
 
 .display-current {
+    display: contents;
+    justify-content: space-around;
+    border: 10px, darkolivegreen;
     text-align: left;
     width: 200px;
+    height: 200px;
     color: lightskyblue
 }
 
@@ -58,27 +73,27 @@ body {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    border: none;
+    border: 1px solid;
 }
 
 .temp {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    border: none;
+    border: 1px solid;
 }
 
 .wind {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    border: none;
+    border: 1px solid;
 }
 
 .humidity {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
-    border: none;
+    border: 1px solid;
 }
 
