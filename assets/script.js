@@ -4,12 +4,12 @@
     var cityVal = document.querySelector('#city');
     var btnSub = document.querySelector('#city-click');
     //var pictureEl = document.getElementById('photo');
-    //var temp = document.querySelector('#temp');
-    //var humid = document.querySelector('#humidity');
-    //var wind = document.querySelector('#wind');
+    var temp = document.querySelector('#temp');
+    var humid = document.querySelector('#humidity');
+    var wind = document.querySelector('#wind');
 
     var apiK = '8d284b80a31339b43b0995d300fbe089';
-    requestURL = 'http://api.openweathermap.org/'
+    //requestURL = 'http://api.openweathermap.org/'
     //https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={apiK}
 
     //make API call
@@ -17,24 +17,28 @@
         let api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiK}`;
         fetch(api).then(function (response) {
             return response.json()
-        }).then(data => displayWeather(data))
+        .then(data => displayWeather(data))
         console.log(response);
-        displayWeather.append(response);
-    }
+    
+    })}
 
     function displayWeather(data) {
-        const temp = data.display - current.temp;
-        const humidity = data.display - current.humidity;
-        const wind = data.display - current.wind;
+        const temp = data.main.temp;
+        const humidity = data.main.humidity;
+        const wind = data.main.wind;
 
-        const tempElement = document.createElement('#temp');
-        tempElement.innerHTML = `${temp} ${tempElement.innerHTML} K`;
-        const humidElement = document.createElement('#humidity');
-        humidityElement.innerHTML = `${humidity} ${humidElement} %`;
-        const windElement = document.createElement('#wind');
-        windElement.innerHTML = `${wind} ${windElement.innerHTML} MPH`;
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = `${temp} ${tempElement.innerHTML}`;
+        response.appendChild(tempElement);
+        const humidElement = document.createElement('div');
+        humidityElement.innerHTML = `${humidity} ${humidElement}`;
+        response.appendChild(humidityElement);
+        const windElement = document.createElement('div');
+        windElement.innerHTML = `${wind} ${windElement.innerHTML}`;
+        response.appendChild(windElement);
 
     }
+    /*
     //parse the response & display current weather
     const currentDate = new Date(response.data.currentDate);
     console.log(currentDate);
@@ -42,26 +46,33 @@
     const month = currentDate.getMonth();
     const year = currentDate.getFullYear();
     locationEl.innerHTML = response.data.location + ' ' + day + ' ' + month + ' ' + year;
-    //var weatherPic = response.data.weather[0].icon;
+    //var weatherPic = response.data.weather[0].icon;*/
     
     
 
 
     //add button functionality
     btnSub.addEventListener("click", function () {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q={city name}&limit=5&appid=8d284b80a31339b43b0995d300fbe089`).then(res => res.json())
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&limit=5&appid=8d284b80a31339b43b0995d300fbe089`)
+        .then(res => res.json())
             .then(data => {
-                var lat = data[0].lat;
-                var lon = data[0].lon;
-                var cityName = data[0].name;
-                getWeather(lat, lon, cityName)
+                var lat = data.coord.lat;
+                var lon = data.coord.lon;
+                var cityName = data.name;
+                getWeather(lat, lon, cityName);
                 console.log(cityName);
-            })
+            });
 
 //get the 5 day out forecast info
-//var cityId = response.data.city;
-//var forecastUrl = "api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={apiK}";
-
+/*var cityId = response.data.city;
+var forecastUrl = "api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={apiK}";
+axios.get(forecastUrl)
+.then(function (response) {
+    const forecastEl = document.querySelectorAll(".forecast");
+    for (let i = 0; i < forecastEl.length; i++) {
+        forecastEl[i].innerHTML = "";
+        const forecastDate = new Date(response.data.Date)
+})*/
         
 
      });
