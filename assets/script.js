@@ -8,7 +8,7 @@
     //var humid = document.querySelector('#humidity');
     //var wind = document.querySelector('#wind');
 
-    var apiK = '8d284b80a31339b43b0995d300fbe089'; 8d284b80a31339b43b0995d300fbe089
+    var apiK = '8d284b80a31339b43b0995d300fbe089';
     requestURL = 'http://api.openweathermap.org/'
     //https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={apiK}
 
@@ -59,8 +59,8 @@
             })
 
 //get the 5 day out forecast info
-var cityId = response.data.city;
-var forecastUrl = "api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={apiK}";
+//var cityId = response.data.city;
+//var forecastUrl = "api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={apiK}";
 
         
 
